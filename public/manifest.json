@@ -1,6 +1,7 @@
 {
   "name": "CaixaSala",
   "short_name": "CaixaSala",
+  "description": "Sistema financeiro escolar para controle de mensalidades e caixa da turma.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0b1020",
