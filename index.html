@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="theme-color" content="#080b12"/>
+    <title>CaixaSala · Turma 2A</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet"/>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+      html { scroll-behavior: smooth; height: 100%; }
+      body, #root { min-height: 100%; height: 100%; }
+      body {
+        background: #080b12;
+        color: #e8eaf6;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      /* ─── Scrollbar ─── */
+      ::-webkit-scrollbar { width: 3px; height: 3px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #1e2640; border-radius: 99px; }
+
+      /* ─── Animations ─── */
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .spin { animation: spin .72s linear infinite; }
+
+      @keyframes shimmer {
+        0%   { background-position: -800px 0; }
+        100% { background-position:  800px 0; }
+      }
+      .skeleton {
+        background: linear-gradient(90deg, #13172a 25%, #1c2240 50%, #13172a 75%);
+        background-size: 1600px 100%;
+        animation: shimmer 1.6s infinite linear;
+        border-radius: 10px;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0);    }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(.94); }
+        to   { opacity: 1; transform: scale(1);   }
+      }
+      @keyframes pulse2 { 0%, 100% { opacity: 1; } 50% { opacity: .42; } }
+      .pulse { animation: pulse2 2.2s ease-in-out infinite; }
+
+      /* ─── Form ─── */
+      input:-webkit-autofill,
+      input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px #13172a inset;
+        -webkit-text-fill-color: #e8eaf6;
+        transition: background-color 9999s;
+      }
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(.55) sepia(1) hue-rotate(200deg);
+      }
+      select option { background: #13172a; color: #e8eaf6; }
+      textarea { line-height: 1.55; }
+
+      /* ─── Focus ─── */
+      *:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
